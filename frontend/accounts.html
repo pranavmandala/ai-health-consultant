@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Health Consultant</title>
+    <link rel="stylesheet" href="/static/accounts.css">
+    <script src="/static/accounts.js" defer></script>
+</head>
+<body>
+    <main class="account-wrapper">
+        <section class="account-card">
+            <div class="brand">
+                <h1>Health Consultant</h1>
+                <p id="subtitle">Welcome back. Log in to continue.</p>
+            </div>
+
+            <div class="tabs" role="tablist" aria-label="Account options">
+                <button class="tab active" id="login-tab" type="button" role="tab"
+                    aria-selected="true" aria-controls="login-form" data-form="login">
+                    Login
+                </button>
+                <button class="tab" id="register-tab" type="button" role="tab"
+                    aria-selected="false" aria-controls="register-form" data-form="register">
+                    Create Account
+                </button>
+            </div>
+
+            <form id="login-form" class="account-form active" novalidate>
+                <div class="field">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" placeholder="johndoe@email.com"
+                        autocomplete="email">
+                    <p class="error-message" id="login-email-error"></p>
+                </div>
+
+                <div class="field">
+                    <label for="login-password">Password</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="login-password" placeholder="Enter your password"
+                            autocomplete="current-password">
+                        <button class="toggle-password" type="button" data-password="login-password">
+                            Show
+                        </button>
+                    </div>
+                    <p class="error-message" id="login-password-error"></p>
+                </div>
+
+                <div class="form-row">
+                    <label class="checkbox-label" for="remember-me">
+                        <input type="checkbox" id="remember-me">
+                        Remember me
+                    </label>
+                    <a href="#" id="forgot-password">Forgot password?</a>
+                </div>
+
+                <button type="submit" class="cta-button">Login &rarr;</button>
+                <p class="status-message" id="login-status" aria-live="polite"></p>
+
+            </form>
+
+            <form id="register-form" class="account-form" novalidate>
+                <div class="field">
+                    <label for="register-name">Full name</label>
+                    <input type="text" id="register-name" placeholder="John Doe" autocomplete="name">
+                    <p class="error-message" id="register-name-error"></p>
+                </div>
+
+                <div class="field">
+                    <label for="register-email">Email</label>
+                    <input type="email" id="register-email" placeholder="johndoe@email.com"
+                        autocomplete="email">
+                    <p class="error-message" id="register-email-error"></p>
+                </div>
+
+                <div class="field">
+                    <label for="register-password">Password</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="register-password" placeholder="Create a password"
+                            autocomplete="new-password">
+                        <button class="toggle-password" type="button" data-password="register-password">
+                            Show
+                        </button>
+                    </div>
+                    <p class="hint">Use at least 8 characters, including a letter and a number.</p>
+                    <p class="error-message" id="register-password-error"></p>
+                </div>
+
+                <div class="field">
+                    <label for="register-confirm">Confirm password</label>
+                    <input type="password" id="register-confirm" placeholder="Re-enter your password"
+                        autocomplete="new-password">
+                    <p class="error-message" id="register-confirm-error"></p>
+                </div>
+
+                <div class="field">
+                    <label class="checkbox-label" for="accept-terms">
+                        <input type="checkbox" id="accept-terms">
+                        I agree to the Terms and Privacy Policy
+                    </label>
+                    <p class="error-message" id="accept-terms-error"></p>
+                </div>
+
+                <button type="submit" class="cta-button">Create Account &rarr;</button>
+                <p class="status-message" id="register-status" aria-live="polite"></p>
+
+            </form>
+
+            <a class="back-link" href="index.html">&larr; Back to home</a>
+            <p class="secure-note">Your health data is private and safe.</p>
+        </section>
+    </main>
+</body>
+</html>
