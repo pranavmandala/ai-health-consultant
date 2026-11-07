@@ -1,5 +1,5 @@
 from datetime import datetime
-from typing import Optional
+from typing import List, Optional
 from pydantic import BaseModel, ConfigDict
 
 class UserCreate(BaseModel):
@@ -12,7 +12,7 @@ class UserLogin(BaseModel):
 
 class DocumentResponse(BaseModel):
     model_config = ConfigDict(from_attributes = True)
- 
+
     id: int
     title: str
     description: Optional[str] = None
@@ -21,3 +21,18 @@ class DocumentResponse(BaseModel):
     size: int
     uploaded_at: Optional[datetime] = None
     user_id: int
+
+class ProfileData(BaseModel):
+    conditions: List[str]
+    medications: List[str]
+    allergies: List[str]
+    symptoms: List[str]
+    other: List[str]
+
+class ProfileConfirm(BaseModel):
+    document_id: int
+    profile: ProfileData
+
+class ProfileResponse(BaseModel):
+    profile: ProfileData
+    updated_at: Optional[datetime] = None

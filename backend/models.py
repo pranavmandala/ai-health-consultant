@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Text, DateTime, ForeignKey, LargeBinary
+from sqlalchemy import Column, Integer, String, Text, DateTime, ForeignKey, LargeBinary, JSON
 from sqlalchemy.sql import func
 from backend.database import Base
 
@@ -19,3 +19,10 @@ class Documents(Base):
     data = Column(LargeBinary, nullable = False)
     uploaded_at = Column(DateTime(timezone = True), server_default = func.now())
     user_id = Column(Integer, ForeignKey("users.id"), nullable = False)
+
+class MedicalProfile(Base):
+    __tablename__ = "medical_profiles"
+    id = Column(Integer, primary_key = True, index = True)
+    user_id = Column(Integer, ForeignKey("users.id"), unique = True, nullable = False)
+    data = Column(JSON, nullable = False)
+    updated_at = Column(DateTime(timezone = True), server_default = func.now(), onupdate = func.now())

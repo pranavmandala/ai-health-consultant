@@ -28,8 +28,18 @@
                 <div id="render-target"></div>
             </div>
 
-            <button type="button" id="upload-btn" class="cta-button" disabled>Upload to Records</button>
+            <button type="button" id="upload-btn" class="cta-button" disabled>Upload &amp; Analyze</button>
             <p class="status-message" id="upload-status" aria-live="polite"></p>
+
+            <div id="review-panel" class="review-panel hidden">
+                <h2>Review extracted details</h2>
+                <p class="hint">Remove anything that's wrong and add anything the AI missed. Nothing is saved to your profile until you confirm.</p>
+                <div id="review-categories"></div>
+                <div class="review-actions">
+                    <button type="button" id="confirm-btn" class="cta-button">Confirm &amp; Save to Profile</button>
+                    <button type="button" id="cancel-btn" class="secondary-button">Cancel</button>
+                </div>
+            </div>
 
             <a class="back-link" href="/static/dashboard.html">&larr; Back to dashboard</a>
             <p class="secure-note">Your health data is private and safe.</p>

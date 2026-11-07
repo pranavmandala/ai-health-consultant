@@ -56,8 +56,6 @@ document.querySelectorAll(".toggle-password").forEach(button => {
     });
 });
 
-
-// CREATE ACCOUNT
 async function createAccount(event) {
     event.preventDefault();
 
@@ -136,7 +134,6 @@ async function createAccount(event) {
 }
 
 
-// LOGIN
 async function loginUser(event) {
     event.preventDefault();
 
@@ -172,7 +169,6 @@ async function loginUser(event) {
 
         if (response.ok) {
 
-            // Store access token
             localStorage.removeItem("access_token");
             sessionStorage.removeItem("access_token");
 
