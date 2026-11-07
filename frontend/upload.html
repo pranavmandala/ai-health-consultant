@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload - Health Consultant</title>
+    <link rel="stylesheet" href="/static/upload.css">
+    <script src="/static/upload.js" defer></script>
+</head>
+<body>
+    <main class="upload-wrapper">
+        <section class="upload-card">
+            <div class="brand">
+                <h1>Upload Document</h1>
+                <p>Add a medical report, prescription, or scan to your records.</p>
+            </div>
+
+            <div id="drop-zone" class="upload-container">
+                <p class="upload-prompt">
+                    Drag &amp; drop your medical report, prescription, or scan here, or click to browse
+                </p>
+                <p class="hint">Accepted: .txt, .json, .pdf, or an image</p>
+                <input type="file" id="file-input" accept=".txt,.json,.pdf,image/*" hidden>
+            </div>
+
+            <div id="preview-panel" class="preview-box hidden">
+                <span id="file-details" class="file-details"></span>
+                <div id="render-target"></div>
+            </div>
+
+            <button type="button" id="upload-btn" class="cta-button" disabled>Upload to Records</button>
+            <p class="status-message" id="upload-status" aria-live="polite"></p>
+
+            <a class="back-link" href="/static/dashboard.html">&larr; Back to dashboard</a>
+            <p class="secure-note">Your health data is private and safe.</p>
+        </section>
+    </main>
+</body>
+</html>

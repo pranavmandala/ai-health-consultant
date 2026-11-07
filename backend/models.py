@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Text, DateTime, ForeignKey
+from sqlalchemy import Column, Integer, String, Text, DateTime, ForeignKey, LargeBinary
 from sqlalchemy.sql import func
 from backend.database import Base
 
@@ -13,5 +13,9 @@ class Documents(Base):
     id = Column(Integer, primary_key = True, index = True)
     title = Column(String(200), nullable = False)
     description = Column(Text)
+    filename = Column(String(255), nullable = False)
+    content_type = Column(String(100), nullable = False)
+    size = Column(Integer, nullable = False)
+    data = Column(LargeBinary, nullable = False)
     uploaded_at = Column(DateTime(timezone = True), server_default = func.now())
     user_id = Column(Integer, ForeignKey("users.id"), nullable = False)

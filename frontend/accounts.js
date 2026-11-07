@@ -1,4 +1,3 @@
-
 const email = document.getElementById("login-email");
 const password = document.getElementById("login-password");
 
@@ -186,7 +185,7 @@ async function loginUser(event) {
             showMessage("login-status", "Login successful. Redirecting...");
 
             setTimeout(() => {
-                window.location.replace("/");
+                window.location.replace("/static/dashboard.html");
             }, 1500);
 
         } else {
@@ -200,12 +199,10 @@ async function loginUser(event) {
 }
 
 
-// Connect forms to functions
 loginForm.addEventListener("submit", loginUser);
 registerForm.addEventListener("submit", createAccount);
 
 
-// Forgot password (not connected to a backend endpoint yet)
 document.getElementById("forgot-password").addEventListener("click", (event) => {
     event.preventDefault();
     showMessage("login-status", "Password reset is not available yet.", true);

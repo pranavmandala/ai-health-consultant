@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Health Consultant</title>
+    <link rel="stylesheet" href="/static/dashboard.css">
+    <script src="/static/dashboard.js" defer></script>
+</head>
+<body>
+    <main class="dashboard-wrapper">
+        <header class="dashboard-header">
+            <h2>Patient Dashboard</h2>
+            <div class="header-actions">
+                <a class="outline-button" href="/static/upload.html">Upload Document</a>
+                <button type="button" id="logout-btn" class="logout-button">Secure Logout</button>
+            </div>
+        </header>
+
+        <div class="dashboard-layout">
+            <aside class="metrics-panel">
+                <h3>Saved Metrics</h3>
+
+                <div class="metric-card">
+                    <span class="metric-label">Active Document Intake</span>
+                    <span id="meta-doc-name" class="metric-value">No attached files</span>
+                </div>
+
+                <div class="metric-card">
+                    <span class="metric-label">Extracted Health Concern</span>
+                    <span id="saved-concern" class="metric-value">Awaiting AI analysis...</span>
+                </div>
+
+                <button type="button" id="sync-btn" class="outline-button sync-button">Sync Records</button>
+            </aside>
+
+            <section class="chat-panel">
+                <div id="chat-box" class="chat-messages"></div>
+                <div class="chat-input-area">
+                    <input type="text" id="chat-input"
+                        placeholder="Describe symptoms or ask follow-up questions...">
+                    <button type="button" id="send-chat-btn" class="cta-button">Send</button>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
